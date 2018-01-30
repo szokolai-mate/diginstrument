@@ -13,12 +13,12 @@
         "name": "Release",
         "projects": [
           {
-            "buildDirectory": "/SharedWithWindows/Projects/szakdolgozat/build",
-            "name": "Szakdolgozat",
-            "sourceDirectory": "/SharedWithWindows/Projects/szakdolgozat",
+            "buildDirectory": "/SharedWithWindows/Projects/diginstrument/build",
+            "name": "diginstrument",
+            "sourceDirectory": "/SharedWithWindows/Projects/diginstrument",
             "targets": [
               {
-                "buildDirectory": "/SharedWithWindows/Projects/szakdolgozat/build",
+                "buildDirectory": "/SharedWithWindows/Projects/diginstrument/build",
                 "fileGroups": [
                   {
                     "isGenerated": true,
@@ -30,11 +30,11 @@
                 ],
                 "fullName": "doc",
                 "name": "doc",
-                "sourceDirectory": "/SharedWithWindows/Projects/szakdolgozat",
+                "sourceDirectory": "/SharedWithWindows/Projects/diginstrument",
                 "type": "UTILITY"
               },
               {
-                "buildDirectory": "/SharedWithWindows/Projects/szakdolgozat/build",
+                "buildDirectory": "/SharedWithWindows/Projects/diginstrument/build",
                 "fileGroups": [
                   {
                     "isGenerated": true,
@@ -46,23 +46,23 @@
                 ],
                 "fullName": "cleanup",
                 "name": "cleanup",
-                "sourceDirectory": "/SharedWithWindows/Projects/szakdolgozat",
+                "sourceDirectory": "/SharedWithWindows/Projects/diginstrument",
                 "type": "UTILITY"
               },
               {
                 "artifacts": [
-                  "/SharedWithWindows/Projects/szakdolgozat/build/lib/libSzakdolgozat.so"
+                  "/SharedWithWindows/Projects/diginstrument/build/lib/libdiginstrument.so"
                 ],
-                "buildDirectory": "/SharedWithWindows/Projects/szakdolgozat/build/src",
+                "buildDirectory": "/SharedWithWindows/Projects/diginstrument/build/src",
                 "fileGroups": [
                   {
                     "compileFlags": " -std=c++14 -O3 -DNDEBUG -fPIC  ",
                     "defines": [
-                      "Szakdolgozat_EXPORTS"
+                      "diginstrument_EXPORTS"
                     ],
                     "includePath": [
                       {
-                        "path": "/SharedWithWindows/Projects/szakdolgozat/inc"
+                        "path": "/SharedWithWindows/Projects/diginstrument/inc"
                       }
                     ],
                     "isGenerated": false,
@@ -87,24 +87,24 @@
                     ]
                   }
                 ],
-                "fullName": "libSzakdolgozat.so",
+                "fullName": "libdiginstrument.so",
                 "linkLibraries": "-Wl,-rpath,/usr/local/lib: -lpthread /usr/local/lib/libportaudio.so /usr/lib/x86_64-linux-gnu/libogg.so /usr/lib/x86_64-linux-gnu/libvorbis.so /usr/lib/x86_64-linux-gnu/libvorbisenc.so",
                 "linkerLanguage": "CXX",
-                "name": "Szakdolgozat",
-                "sourceDirectory": "/SharedWithWindows/Projects/szakdolgozat/src",
+                "name": "diginstrument",
+                "sourceDirectory": "/SharedWithWindows/Projects/diginstrument/src",
                 "type": "SHARED_LIBRARY"
               },
               {
                 "artifacts": [
-                  "/SharedWithWindows/Projects/szakdolgozat/build/bin/Test"
+                  "/SharedWithWindows/Projects/diginstrument/build/bin/Test"
                 ],
-                "buildDirectory": "/SharedWithWindows/Projects/szakdolgozat/build/test",
+                "buildDirectory": "/SharedWithWindows/Projects/diginstrument/build/test",
                 "fileGroups": [
                   {
                     "compileFlags": " -std=c++14 -g -O0 --coverage -fno-elide-constructors -fprofile-arcs -ftest-coverage -fno-inline -fno-inline-small-functions -fno-default-inline -O3 -DNDEBUG  ",
                     "includePath": [
                       {
-                        "path": "/SharedWithWindows/Projects/szakdolgozat/inc"
+                        "path": "/SharedWithWindows/Projects/diginstrument/inc"
                       }
                     ],
                     "isGenerated": false,
@@ -158,11 +158,11 @@
                 "linkLibraries": "-Wl,-rpath,/usr/local/lib -lpthread /usr/local/lib/libgtest.a /usr/local/lib/libportaudio.so /usr/lib/x86_64-linux-gnu/libogg.so /usr/lib/x86_64-linux-gnu/libvorbis.so /usr/lib/x86_64-linux-gnu/libvorbisenc.so",
                 "linkerLanguage": "CXX",
                 "name": "Test",
-                "sourceDirectory": "/SharedWithWindows/Projects/szakdolgozat/test",
+                "sourceDirectory": "/SharedWithWindows/Projects/diginstrument/test",
                 "type": "EXECUTABLE"
               },
               {
-                "buildDirectory": "/SharedWithWindows/Projects/szakdolgozat/build/test",
+                "buildDirectory": "/SharedWithWindows/Projects/diginstrument/build/test",
                 "fileGroups": [
                   {
                     "isGenerated": true,
@@ -174,7 +174,7 @@
                 ],
                 "fullName": "coverage",
                 "name": "coverage",
-                "sourceDirectory": "/SharedWithWindows/Projects/szakdolgozat/test",
+                "sourceDirectory": "/SharedWithWindows/Projects/diginstrument/test",
                 "type": "UTILITY"
               }
             ]
