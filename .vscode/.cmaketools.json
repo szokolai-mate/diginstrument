@@ -1,16 +1,16 @@
 {
   "variant": {
-    "label": "Release",
+    "label": "Debug",
     "keywordSettings": {
-      "buildType": "release"
+      "buildType": "debug"
     },
-    "description": "Enable optimizations, omit debug info"
+    "description": "Emit debug information without performing optimizations"
   },
   "activeEnvironments": [],
   "codeModel": {
     "configurations": [
       {
-        "name": "Release",
+        "name": "Debug",
         "projects": [
           {
             "buildDirectory": "/SharedWithWindows/Projects/diginstrument/build",
@@ -56,7 +56,7 @@
                 "buildDirectory": "/SharedWithWindows/Projects/diginstrument/build/src",
                 "fileGroups": [
                   {
-                    "compileFlags": " -std=c++14 -O3 -DNDEBUG -fPIC  ",
+                    "compileFlags": " -std=c++14 -g -fPIC  ",
                     "defines": [
                       "diginstrument_EXPORTS"
                     ],
@@ -74,6 +74,7 @@
                       "consolidation_methods.cpp",
                       "multiplexer.cpp",
                       "ogg_file_loader.cpp",
+                      "pattern.cpp",
                       "portaudio_backend.cpp",
                       "queue_buffer.cpp",
                       "recorder.cpp",
@@ -95,13 +96,29 @@
                 "type": "SHARED_LIBRARY"
               },
               {
-                "artifacts": [
-                  "/SharedWithWindows/Projects/diginstrument/build/bin/Test"
-                ],
-                "buildDirectory": "/SharedWithWindows/Projects/diginstrument/build/test",
+                "buildDirectory": "/SharedWithWindows/Projects/diginstrument/build/mixer_test",
                 "fileGroups": [
                   {
-                    "compileFlags": " -std=c++14 -g -O0 --coverage -fno-elide-constructors -fprofile-arcs -ftest-coverage -fno-inline -fno-inline-small-functions -fno-default-inline -O3 -DNDEBUG  ",
+                    "isGenerated": true,
+                    "sources": [
+                      "../build/mixer_test/CMakeFiles/mixer_test_coverage",
+                      "../build/mixer_test/CMakeFiles/mixer_test_coverage.rule"
+                    ]
+                  }
+                ],
+                "fullName": "mixer_test_coverage",
+                "name": "mixer_test_coverage",
+                "sourceDirectory": "/SharedWithWindows/Projects/diginstrument/mixer_test",
+                "type": "UTILITY"
+              },
+              {
+                "artifacts": [
+                  "/SharedWithWindows/Projects/diginstrument/build/bin/MixerTest"
+                ],
+                "buildDirectory": "/SharedWithWindows/Projects/diginstrument/build/mixer_test",
+                "fileGroups": [
+                  {
+                    "compileFlags": " -std=c++14 -g -O0 --coverage -fno-elide-constructors -fprofile-arcs -ftest-coverage -fno-inline -fno-inline-small-functions -fno-default-inline -g  ",
                     "includePath": [
                       {
                         "path": "/SharedWithWindows/Projects/diginstrument/inc"
@@ -140,6 +157,7 @@
                       "../src/consolidation_methods.cpp",
                       "../src/multiplexer.cpp",
                       "../src/ogg_file_loader.cpp",
+                      "../src/pattern.cpp",
                       "../src/portaudio_backend.cpp",
                       "../src/queue_buffer.cpp",
                       "../src/recorder.cpp",
@@ -153,28 +171,74 @@
                     ]
                   }
                 ],
-                "fullName": "Test",
-                "linkLanguageFlags": "-std=c++14 -g -O0 --coverage -fno-elide-constructors -fprofile-arcs -ftest-coverage -fno-inline -fno-inline-small-functions -fno-default-inline -O3 -DNDEBUG",
+                "fullName": "MixerTest",
+                "linkLanguageFlags": "-std=c++14 -g -O0 --coverage -fno-elide-constructors -fprofile-arcs -ftest-coverage -fno-inline -fno-inline-small-functions -fno-default-inline -g",
                 "linkLibraries": "-Wl,-rpath,/usr/local/lib -lpthread /usr/local/lib/libgtest.a /usr/local/lib/libportaudio.so /usr/lib/x86_64-linux-gnu/libogg.so /usr/lib/x86_64-linux-gnu/libvorbis.so /usr/lib/x86_64-linux-gnu/libvorbisenc.so",
                 "linkerLanguage": "CXX",
-                "name": "Test",
-                "sourceDirectory": "/SharedWithWindows/Projects/diginstrument/test",
+                "name": "MixerTest",
+                "sourceDirectory": "/SharedWithWindows/Projects/diginstrument/mixer_test",
                 "type": "EXECUTABLE"
               },
               {
-                "buildDirectory": "/SharedWithWindows/Projects/diginstrument/build/test",
+                "artifacts": [
+                  "/SharedWithWindows/Projects/diginstrument/build/bin/InstrumentTest"
+                ],
+                "buildDirectory": "/SharedWithWindows/Projects/diginstrument/build/instrument_test",
+                "fileGroups": [
+                  {
+                    "compileFlags": " -std=c++14 -g -O0 --coverage -fno-elide-constructors -fprofile-arcs -ftest-coverage -fno-inline -fno-inline-small-functions -fno-default-inline -g  ",
+                    "includePath": [
+                      {
+                        "path": "/SharedWithWindows/Projects/diginstrument/inc"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "pattern_test.cpp",
+                      "test_main.cpp",
+                      "../src/cheap_sawtooth_generator.cpp",
+                      "../src/cheap_square_generator.cpp",
+                      "../src/complex_waveform_generator.cpp",
+                      "../src/consolidation_methods.cpp",
+                      "../src/multiplexer.cpp",
+                      "../src/ogg_file_loader.cpp",
+                      "../src/pattern.cpp",
+                      "../src/portaudio_backend.cpp",
+                      "../src/queue_buffer.cpp",
+                      "../src/recorder.cpp",
+                      "../src/repeating_buffer.cpp",
+                      "../src/sawtooth_generator.cpp",
+                      "../src/sine_generator.cpp",
+                      "../src/square_generator.cpp",
+                      "../src/triangle_generator.cpp",
+                      "../src/vorbis_decoder.cpp",
+                      "../src/vorbis_encoder.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "InstrumentTest",
+                "linkLanguageFlags": "-std=c++14 -g -O0 --coverage -fno-elide-constructors -fprofile-arcs -ftest-coverage -fno-inline -fno-inline-small-functions -fno-default-inline -g",
+                "linkLibraries": "-Wl,-rpath,/usr/local/lib -lpthread /usr/local/lib/libgtest.a /usr/local/lib/libportaudio.so /usr/lib/x86_64-linux-gnu/libogg.so /usr/lib/x86_64-linux-gnu/libvorbis.so /usr/lib/x86_64-linux-gnu/libvorbisenc.so",
+                "linkerLanguage": "CXX",
+                "name": "InstrumentTest",
+                "sourceDirectory": "/SharedWithWindows/Projects/diginstrument/instrument_test",
+                "type": "EXECUTABLE"
+              },
+              {
+                "buildDirectory": "/SharedWithWindows/Projects/diginstrument/build/instrument_test",
                 "fileGroups": [
                   {
                     "isGenerated": true,
                     "sources": [
-                      "../build/test/CMakeFiles/coverage",
-                      "../build/test/CMakeFiles/coverage.rule"
+                      "../build/instrument_test/CMakeFiles/instrument_test_coverage",
+                      "../build/instrument_test/CMakeFiles/instrument_test_coverage.rule"
                     ]
                   }
                 ],
-                "fullName": "coverage",
-                "name": "coverage",
-                "sourceDirectory": "/SharedWithWindows/Projects/diginstrument/test",
+                "fullName": "instrument_test_coverage",
+                "name": "instrument_test_coverage",
+                "sourceDirectory": "/SharedWithWindows/Projects/diginstrument/instrument_test",
                 "type": "UTILITY"
               }
             ]
@@ -182,7 +246,7 @@
         ]
       }
     ],
-    "cookie": "0.23045437091091725",
+    "cookie": "0.7567499913326072",
     "inReplyTo": "codemodel",
     "type": "reply"
   }
